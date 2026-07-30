@@ -13,6 +13,19 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
+
+#To show web-app: complete page layout
+st.set_page_config(layout="wide")
+
+#To Give Title
+st.title("AI RESUME GENERATOR")
+st.write("""This app helps user to build customized professional
+Resume with Latest job apply Links""")
+
+st.image("bg.png")
+
+
+
 # Step 3:API KEY
 TAVILY_API_KEY = "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"
 GOOGLE_API_KEY = "AQ.Ab8RN6IY8PK4p1AAGpJGv5JufJzNFk8B3drGwV6KULvw8YtHgg"
@@ -24,8 +37,8 @@ model = ChatGoogleGenerativeAI(
     model ="gemini-3.5-flash-lite",
     google_api_key =GOOGLE_API_KEY
 )
-response = model.invoke("Hellobuddy!")
-response.content[-1]['text']
+# response = model.invoke("Hellobuddy!")
+# response.content[-1]['text']
 
 
 def search_latest_new_jobs(query):
@@ -42,7 +55,7 @@ def search_latest_new_jobs(query):
 agent = create_agent(
     model = model,
     tools= [search_latest_new_jobs])
-agent
+# agent
 
 def main_agent(agent, query):
   """This is the main agent, or leader agent
@@ -82,9 +95,9 @@ def main_agent(agent, query):
   return code
 
 
-code = main_agent(agent, "Rishabh, Python developer, Data Analyst, GENI AI EXPERT")
-from IPython import display as DISPLAY
-DISPLAY.HTML(code)
+# code = main_agent(agent, "Rishabh, Python developer, Data Analyst, GENI AI EXPERT")
+# from IPython import display as DISPLAY
+# DISPLAY.HTML(code)
 
 
 #fetch Latest Domain related Jobs using Tavily
@@ -111,6 +124,6 @@ def get_jobs(agent,
               return code
 
 
-code = get_jobs(agent)
-DISPLAY.HTML(code)
+# code = get_jobs(agent)
+# DISPLAY.HTML(code)
 
