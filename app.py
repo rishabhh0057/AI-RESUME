@@ -22,7 +22,7 @@ st.write("""This app helps user to build customized professional
 Resume with Latest job apply Links""")
 
 st.image("bg.png")
-st.siebar.title("Fill Important Dtails")
+st.sidebar.title("Fill Important Dtails")
 st.sidebar.image("bg.png")
 
 
