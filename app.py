@@ -44,7 +44,7 @@ else:
 
 #MULTISELECT OPTION
 option =["DELHI","MUMBAI","PUNE","BANGLORE",
-          "GURUGRAM"]
+          "GURUGRAM/GURGAON"]
 location = st.sidebar.multiselect("SELECT location", options = option)
 
 profile_op = ["Data Analysts","AI ENGINEER", "GEN AI DEVELOPER", "FULL STACK DEVLOPER","DATA SCIENTIST"]
